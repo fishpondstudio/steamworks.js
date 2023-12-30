@@ -1,6 +1,6 @@
 {
     "name": "@ai-zen/steamworks.js",
-    "version": "0.3.6-dev.6",
+    "version": "0.3.6-dev.7",
     "main": "index.js",
     "types": "index.d.ts",
     "napi": {
