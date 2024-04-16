@@ -2,7 +2,7 @@ name: Publish
 
 on:
     push:
-        branches: [main]
+        branches: [standalone-ci]
     pull_request:
 
 env:
@@ -11,7 +11,7 @@ env:
 
 jobs:
     check:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-20.04
 
         steps:
             - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
               run: cargo clippy
 
     build:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-20.04
 
         steps:
             - uses: actions/checkout@v3
@@ -101,9 +101,9 @@ jobs:
 
     deploy:
         # prevents this action from running on forks or pull requests
-        if: ${{ github.repository == 'ceifa/steamworks.js' && github.event_name == 'push' }}
+        if: ${{ github.repository == 'fishpondstudio/steamworks.js' && github.event_name == 'push' }}
 
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-20.04
         needs: [build, build-mac]
 
         steps:
@@ -124,3 +124,4 @@ jobs:
               uses: JS-DevTools/npm-publish@v1
               with:
                   token: ${{ secrets.NPM_TOKEN }}
+                  access: public

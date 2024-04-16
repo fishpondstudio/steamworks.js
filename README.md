@@ -7,6 +7,10 @@
 
 A modern implementation of the Steamworks SDK for HTML/JS and NodeJS based applications.
 
+## Why this Fork?
+
+This is forked from `ai-zen/steamworks.js`, which is a more up to date fork itself. The fork aims to take all updates from upstream with the only difference being the Linux binaries are built on Ubuntu 20.04 instead of Ubuntu 22.04. This results in the library linking with glibc 2.31 instead of 2.33 and should make it work on a slightly larger audience. This fork is used in [CivIdle](https://store.steampowered.com/app/2181940/CivIdle/)
+
 ## Why
 
 I used [greenworks](https://github.com/greenheartgames/greenworks) for a long time and it's great, but I gave up for the following reasons.

@@ -1,6 +1,6 @@
 {
-    "name": "steamworks.js",
-    "version": "0.3.1",
+    "name": "@fishpondstudio/steamworks.js",
+    "version": "0.3.6",
     "main": "index.js",
     "types": "index.d.ts",
     "napi": {
@@ -42,6 +42,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ceifa/steamworks.js"
+        "url": "https://github.com/fishpondstudio/steamworks.js"
     }
 }
