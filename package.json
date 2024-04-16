@@ -1,5 +1,5 @@
 {
-    "name": "@ai-zen/steamworks.js",
+    "name": "@fishpondstudio/steamworks.js",
     "version": "0.3.6",
     "main": "index.js",
     "types": "index.d.ts",
@@ -42,6 +42,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ai-zen/steamworks.js"
+        "url": "https://github.com/fishpondstudio/steamworks.js"
     }
 }
