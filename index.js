@@ -44,6 +44,11 @@ module.exports.init = (appId) => {
 module.exports.restartAppIfNecessary = (appId) => nativeBinding.restartAppIfNecessary(appId);
 
 /**
+ * Shutdown the steam client
+ */
+module.exports.shutdown = () => nativeBinding.shutdown();
+
+/**
  * Enable the steam overlay on electron
  * @param {boolean} [disableEachFrameInvalidation] - Should attach a single pixel to be rendered each frame
 */
