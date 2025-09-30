@@ -4,6 +4,8 @@ use steamworks::AppId;
 use steamworks::Client;
 use steamworks::SteamAPIInitError;
 
+use crate::client::get_client;
+
 pub mod client;
 
 #[macro_use]
@@ -35,6 +37,14 @@ pub fn init(app_id: Option<u32>) -> Result<(), Error> {
 #[napi]
 pub fn restart_app_if_necessary(app_id: u32) -> bool {
     steamworks::restart_app_if_necessary(AppId(app_id))
+}
+
+#[napi]
+pub fn shutdown() {
+    if client::has_client() {
+        client::drop_single();
+        client::drop_client();
+    }
 }
 
 #[napi]
