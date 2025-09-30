@@ -59,7 +59,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
-                  name: OS specific binaries
+                  name: binaries-${{ strategy.job-index }}
                   path: dist
                   if-no-files-found: error
 
@@ -94,7 +94,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
-                  name: OS specific binaries
+                  name: binaries-${{ strategy.job-index }}
                   path: dist
                   if-no-files-found: error
 
@@ -111,7 +111,8 @@ jobs:
             - name: Download build
               uses: actions/download-artifact@v4
               with:
-                  name: OS specific binaries
+                  pattern: binaries-*
+                  merge-multiple: true
                   path: dist/
 
             - name: Log files
